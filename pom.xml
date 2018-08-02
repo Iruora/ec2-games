@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
@@ -10,11 +11,7 @@
 	<name>Multi Chapter Simple Parent Project</name>
 
 	<modules>
-		<module>chosa-core</module>
-		<module>chosa-front-admin</module>
-		<module>chosa-family</module>
-		<module>chosa-trainingCenter</module>
-		<module>chosa-teacher</module>
+		<module>web-exercice</module>
 	</modules>
 	<properties>
 		<jdk.version>1.7</jdk.version>
@@ -32,6 +29,11 @@
 	<build>
 		<pluginManagement>
 			<plugins>
+				<plugin>
+					<groupId>org.apache.tomcat.maven</groupId>
+					<artifactId>tomcat7-maven-plugin</artifactId>
+					<version>2.0</version>
+				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
@@ -100,9 +102,38 @@
 	</repositories>
 	<profiles>
 		<profile>
-			<id>DEV</id>
+			<id>DEVDEV</id>
 			<activation>
 				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<mail.user>AKIAJOIKDHSE7RPYAVUA</mail.user>
+				<mail.password>AoOosNgJUegOyiDGkUpPf9+yt3xh3/YcRbUUq1eQkUnY</mail.password>
+				<mail.disabled>true</mail.disabled>
+				<mail.webmaster>nidhal.aroui@allence-tunisie.com</mail.webmaster>
+				<mail.contact>nidhal.aroui@allence-tunisie.com</mail.contact>
+				<mail.to>nidhal.aroui@allence-tunisie.com</mail.to>
+				<user.file.folder>D:\Documents\Chosa</user.file.folder>
+				<log.applicationName>SPRING MVC</log.applicationName>
+				<log.level>DEBUG</log.level>
+				<log.environement>LOCAL</log.environement>
+				<aop.monitoring.duration>0</aop.monitoring.duration>
+				<datasource.driverclass>com.mysql.jdbc.Driver</datasource.driverclass>
+				<datasource.jdbcurl>jdbc:mysql://localhost:3306/arouri?useEncoding=true&amp;characterEncoding=UTF-8</datasource.jdbcurl>
+				<datasource.user>root</datasource.user>
+				<datasource.password />
+				<datasource.dialect>org.hibernate.dialect.MySQL5Dialect</datasource.dialect>
+				<hibernate.show_sql>true</hibernate.show_sql>
+				<app.url.value>http://localhost:8080/Chosa/</app.url.value>
+				<sms.rootee.credentials>NONE</sms.rootee.credentials>
+				<sms.enabled>false</sms.enabled>
+
+			</properties>
+		</profile>
+		<profile>
+			<id>DEV</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
 			</activation>
 			<properties>
 				<mail.user>nepasrepondre@allence-tunisie.com</mail.user>
@@ -132,6 +163,7 @@
 				<hibernate.dialect>org.hibernate.dialect.MySQL5Dialect</hibernate.dialect>
 			</properties>
 		</profile>
+
 		<profile>
 			<id>PREPROD</id>
 			<properties>

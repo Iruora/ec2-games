@@ -1,0 +1,4 @@
+com\atn\demo\config\SpringMvcInitializer.class
+com\atn\demo\config\AppConfig.class
+com\atn\demo\config\MvcResourcesConfig.class
+com\atn\demo\mvc\module\mainController\WebController.class

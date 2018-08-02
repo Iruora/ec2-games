@@ -1,0 +1,23 @@
+.h100 {
+	height: 400px;
+	padding-top: 8%;
+	
+}
+.ftrem {
+	font-size: 5rem;	
+}
+.alert-text {
+	font-size: x-large;
+	text-align: center;
+}
+*{margin:0px;padding:0px;}
+
+.operation {
+	font-size: 5.5rem;
+	font-weight: bolder;
+}
+
+.left-number {
+	font-size: 2.2rem;
+	font-weight: bolder;
+}

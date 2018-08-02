@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>Chosa</name>
+	<comment></comment>
+	<projects>
+		<project>chosa-core</project>
+		<project>chosa-family</project>
+		<project>chosa-front-admin</project>
+		<project>chosa-teacher</project>
+		<project>chosa-trainingCenter</project>
+		<project>front</project>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.m2e.core.maven2Builder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.m2e.core.maven2Nature</nature>
+	</natures>
+</projectDescription>
