@@ -1,5 +1,8 @@
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -17,17 +20,18 @@
 				class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
 			</a>
 			<div class="btn-group">
-				<a href="/exercice" class="btn btn-lg btn-primary">Back to exercice</a>
-				<a href="/exercice/${operation}" class="btn btn-lg btn-info">Back to numbers</a>
+				<a href="/exercice" class="btn btn-lg btn-primary">Back to
+					exercice</a> <a href="/exercice/${operation}"
+					class="btn btn-lg btn-info">Back to numbers</a>
 			</div>
 
 		</div>
 		<div id="results" class="row"></div>
 		<div class="row">
-			<div class="well well-lg col-lg-3 col-md-offset-3 h100 ftrem">
+			<div class="well well-lg col-md-3 col-md-offset-3  h100 ftrem">
 				${operationString}</div>
 
-			<div class="well well-lg col-lg-3 h100">
+			<div class="well well-lg col-md-3 h100">
 				<div class="form-group">
 					<label for="userInput">Result :</label> <input type="number"
 						id="userInput" class="form-control">
@@ -38,7 +42,7 @@
 
 		<div class="row ">
 			<button id="verifBtn"
-				class="btn btn-success btn-lg col-lg-6 col-md-10 col-md-offset-3">verify</button>
+				class="btn btn-success btn-lg col-md-6 col-md-10 col-md-offset-3">verify</button>
 		</div>
 		<div class="row" id="next">
 			<a href="" class="btn btn-warning btn-lg"> <span
@@ -55,6 +59,8 @@
 	<script type="text/javascript"
 		src="/static/bootstrap-3.3.7/js/bootstrap.js"></script>
 	<script>
+	var csrfName="${_csrf.parameterName}";
+	var csrfToken="${_csrf.token}";
 		$(document).ready( function () {
 
 			$userInputField = $("#userInput");
@@ -96,6 +102,15 @@
 	            	$next.show();
 	                $( ".demo-container" ).html( "<p>All new content. <em>You bet!</em></p>" );
 	                $resultsString.html("<div class='alert alert-success alert-text' role='alert' id='success-alert' > well done ! </div> ");
+
+	                $.get(
+						"${parenurl}score?"+csrfName+"="+csrfToken,
+						{success: true},
+						data => {
+							
+							console.log("Scooooooooooooore !"+data);
+						}
+	    	        );
 	            }
 	            else {
 	            	console.log("Oh snap!");

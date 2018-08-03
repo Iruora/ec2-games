@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.AbstractController;
@@ -22,6 +23,7 @@ import antlr.collections.List;
 @Controller
 public class WebController {
 	private Cookie myCookie;
+
 	/************************************
 	 * 
 	 * @param request
@@ -96,6 +98,8 @@ public class WebController {
 		}
 	}
 
+
+
 	/***********************************************
 	 * 
 	 * @param operation
@@ -105,30 +109,19 @@ public class WebController {
 	@RequestMapping(value = "/exercice/{operation}/{firstNumber}", method = RequestMethod.GET)
 	@ResponseBody
 	protected ModelAndView loadOperationPage(@PathVariable("operation") String operation,
-			@PathVariable("firstNumber") int firstNumber, HttpServletResponse response, HttpServletRequest request) {
+			@PathVariable("firstNumber") int firstNumber, HttpServletResponse response, HttpServletRequest request
+	// ,@RequestParam boolean success
+	) {
 
+		// int scoreStep = 0;
 		ModelAndView model = new ModelAndView();
 		model.setViewName("result");
 		model.addObject("operation", operation);
 		// =======================================
-		final long start = new Date().getTime();
+		// final long start = new Date().getTime();
 
-		System.out.println("$%start%$ :" + start);
+		// System.out.println("$%start%$ :" + start);
 		// ----------------------------------------------
-		myCookie = getCookieByName(operation + "" + firstNumber, request);
-		
-
-		if (myCookie == null) {
-			
-			System.out.println("$% /!EXIST/ %$ :" + start);
-			myCookie = new Cookie(operation + "" + firstNumber, "0");
-
-			myCookie.setMaxAge(3600 * 24);
-		}
-
-		// ----------------------------------------------
-
-		// response.addCookie(cookie);
 		// =======================================
 		float result;
 		Random rand = new Random();
@@ -142,13 +135,7 @@ public class WebController {
 			result = (int) (pickedNumber + firstNumber);
 			model.addObject("result", result);
 
-			// ---------------------
-			System.out.println(new Date().getTime());
-			myCookie.setValue(""+(new Date().getTime() - start + myCookie.getValue()));
-			myCookie.setValue(start+"");
-			myCookie.setMaxAge(3600 * 24);
-			response.addCookie(myCookie);
-			// -------------------
+			
 			return model;
 		}
 
@@ -184,29 +171,5 @@ public class WebController {
 
 		}
 
-	}
-
-	private boolean cookieExist(String cookieName, HttpServletRequest request) {
-		if (request.getCookies() != null) {
-			for (Cookie cookie : request.getCookies()) {
-				if (cookie.getName().equals(cookieName)) {
-
-					return true;
-				}
-			}
-		}
-		return false;
-	}
-	
-	private Cookie getCookieByName(String cookieName, HttpServletRequest request) {
-		if (request.getCookies() != null) {
-			for (Cookie cookie : request.getCookies()) {
-				if (cookie.getName().equals(cookieName)) {
-
-					return cookie;
-				}
-			}
-		}
-		return null;
-	}
+	}	
 }

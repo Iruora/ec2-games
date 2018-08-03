@@ -26,26 +26,7 @@ import com.atn.commons.CommonsConfig;
 @Import({ RepositoryConfig.class,CommonsConfig.class })
 @PropertySource(value = { "classpath:config.properties" }, ignoreResourceNotFound = false)
 public /*abstract*/ class AppConfig extends RepositoryConfig {
-	/*@Bean(name = "dataSource")
-	public DataSource dataSource() {
-		Driver driver = new org.h2.Driver();
-		SimpleDriverDataSource simpleDriverDataSource = new SimpleDriverDataSource(
-				driver,
-				"jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;MODE=Oracle;TRACE_LEVEL_SYSTEM_OUT=2");
-		DataSource dataSource = new LazyConnectionDataSourceProxy(
-				simpleDriverDataSource);
-		return dataSource;
-	}*/
-	/*@Bean
-	public DataSourceInitializer dataSourceInitializer() {
-	    ResourceDatabasePopulator resourceDatabasePopulator = new ResourceDatabasePopulator();
-	    resourceDatabasePopulator.addScript(new ClassPathResource("metadata/schema.sql"));
-	    resourceDatabasePopulator.addScript(new ClassPathResource("metadata/data.sql"));
-        DataSourceInitializer dataSourceInitializer = new DataSourceInitializer();
-        dataSourceInitializer.setDataSource(dataSource());
-        dataSourceInitializer.setDatabasePopulator(resourceDatabasePopulator);
-        return dataSourceInitializer;
-    }*/
+	
 	@Bean
 	 public DataSource getDataSource(){
 	  DriverManagerDataSource ds = new DriverManagerDataSource();
