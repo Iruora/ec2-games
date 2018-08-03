@@ -1,7 +1,11 @@
 package com.atn.demo.mvc.module.mainController;
 
+import java.time.Period;
+import java.util.Date;
 import java.util.Random;
 
+import javax.print.attribute.standard.DateTimeAtCompleted;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -17,6 +21,7 @@ import antlr.collections.List;
 
 @Controller
 public class WebController {
+	private Cookie myCookie;
 	/************************************
 	 * 
 	 * @param request
@@ -81,16 +86,11 @@ public class WebController {
 		ModelAndView model = new ModelAndView();
 		model.addObject("title", operation);
 		model.setViewName("numbers");
-		
-		if ( 
-				operation.equals("addition") || 
-				operation.equals("soustraction") || 
-				operation.equals("multiplication") || 
-				operation.equals("division") 
-			) {
+
+		if (operation.equals("addition") || operation.equals("soustraction") || operation.equals("multiplication")
+				|| operation.equals("division")) {
 			return model;
-		}
-		else {
+		} else {
 			model.setViewName("exercice");
 			return model;
 		}
@@ -105,11 +105,30 @@ public class WebController {
 	@RequestMapping(value = "/exercice/{operation}/{firstNumber}", method = RequestMethod.GET)
 	@ResponseBody
 	protected ModelAndView loadOperationPage(@PathVariable("operation") String operation,
-			@PathVariable("firstNumber") int firstNumber) {
+			@PathVariable("firstNumber") int firstNumber, HttpServletResponse response, HttpServletRequest request) {
 
 		ModelAndView model = new ModelAndView();
 		model.setViewName("result");
-		model.addObject("operation",operation);
+		model.addObject("operation", operation);
+		// =======================================
+		final long start = new Date().getTime();
+
+		System.out.println("$%start%$ :" + start);
+		// ----------------------------------------------
+		myCookie = getCookieByName(operation + "" + firstNumber, request);
+		
+
+		if (myCookie == null) {
+			
+			System.out.println("$% /!EXIST/ %$ :" + start);
+			myCookie = new Cookie(operation + "" + firstNumber, "0");
+
+			myCookie.setMaxAge(3600 * 24);
+		}
+
+		// ----------------------------------------------
+
+		// response.addCookie(cookie);
 		// =======================================
 		float result;
 		Random rand = new Random();
@@ -119,10 +138,17 @@ public class WebController {
 		case "addition": {
 			pickedNumber = rand.nextInt(100) + 1;
 			model.addObject("operationString", pickedNumber + " + " + firstNumber + " = ");
-			
+
 			result = (int) (pickedNumber + firstNumber);
 			model.addObject("result", result);
 
+			// ---------------------
+			System.out.println(new Date().getTime());
+			myCookie.setValue(""+(new Date().getTime() - start + myCookie.getValue()));
+			myCookie.setValue(start+"");
+			myCookie.setMaxAge(3600 * 24);
+			response.addCookie(myCookie);
+			// -------------------
 			return model;
 		}
 
@@ -144,8 +170,8 @@ public class WebController {
 
 		case "division":
 
-			pickedNumber = (rand.nextInt(9)+1)*firstNumber;
-			//int t[] = { 1, firstNumber / 2, firstNumber };
+			pickedNumber = (rand.nextInt(9) + 1) * firstNumber;
+			// int t[] = { 1, firstNumber / 2, firstNumber };
 			model.addObject("operationString", pickedNumber + " / " + firstNumber + " = ");
 			result = (float) (pickedNumber / firstNumber);
 			model.addObject("result", result);
@@ -158,5 +184,29 @@ public class WebController {
 
 		}
 
+	}
+
+	private boolean cookieExist(String cookieName, HttpServletRequest request) {
+		if (request.getCookies() != null) {
+			for (Cookie cookie : request.getCookies()) {
+				if (cookie.getName().equals(cookieName)) {
+
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	
+	private Cookie getCookieByName(String cookieName, HttpServletRequest request) {
+		if (request.getCookies() != null) {
+			for (Cookie cookie : request.getCookies()) {
+				if (cookie.getName().equals(cookieName)) {
+
+					return cookie;
+				}
+			}
+		}
+		return null;
 	}
 }

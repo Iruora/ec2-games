@@ -24,10 +24,10 @@
 		</div>
 		<div id="results" class="row"></div>
 		<div class="row">
-			<div class="well well-lg col-lg-3 col-md-offset-3 h100 ftrem">
+			<div class="well well-lg col-md-3 col-md-offset-3  h100 ftrem">
 				${operationString}</div>
 
-			<div class="well well-lg col-lg-3 h100">
+			<div class="well well-lg col-md-3 h100">
 				<div class="form-group">
 					<label for="userInput">Result :</label> <input type="number"
 						id="userInput" class="form-control">
@@ -38,7 +38,7 @@
 
 		<div class="row ">
 			<button id="verifBtn"
-				class="btn btn-success btn-lg col-lg-6 col-md-10 col-md-offset-3">verify</button>
+				class="btn btn-success btn-lg col-md-6 col-md-10 col-md-offset-3">verify</button>
 		</div>
 		<div class="row" id="next">
 			<a href="" class="btn btn-warning btn-lg"> <span
@@ -63,8 +63,14 @@
 			$next = $("#next");
 			$next.hide();
 
+			if ($userInputField.val() != "") {
+				$("#verifBtn").prop( "disabled", false );
+			}
+			else $("#verifBtn").prop( "disabled", true );
+
 			$userInputField.on("keyup", e => {
 				$userInput = $("#userInput").val();
+				console.log("&&&"+$userInputField.val());
 				if ($userInputField.val() != "") {
 					$("#verifBtn").prop( "disabled", false );
 				}
@@ -76,16 +82,16 @@
 			});
 			//=======================================
 	    	$("#verifBtn").on("click", (e)=> {
-	            
+	    		$userInput = $("#userInput").val();
 	            
 	            $resultsString = $("#results");
 
 	            
 	            console.log("server : "+${result});
-	            console.log("client : "+$userInput);
+	            console.log("client : "+$userInputField.val());
 	            console.log("entryDiff : "+($userInput - ${result}));
 
-	            if ((${result} == $userInput) ) {
+	            if ((${result} == $userInputField.val()) ) {
 	            	console.log("gut");
 	            	$next.show();
 	                $( ".demo-container" ).html( "<p>All new content. <em>You bet!</em></p>" );

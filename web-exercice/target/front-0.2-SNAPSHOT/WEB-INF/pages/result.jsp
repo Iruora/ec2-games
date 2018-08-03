@@ -63,8 +63,14 @@
 			$next = $("#next");
 			$next.hide();
 
+			if ($userInputField.val() != "") {
+				$("#verifBtn").prop( "disabled", false );
+			}
+			else $("#verifBtn").prop( "disabled", true );
+
 			$userInputField.on("keyup", e => {
 				$userInput = $("#userInput").val();
+				console.log("&&&"+$userInputField.val());
 				if ($userInputField.val() != "") {
 					$("#verifBtn").prop( "disabled", false );
 				}
@@ -76,16 +82,16 @@
 			});
 			//=======================================
 	    	$("#verifBtn").on("click", (e)=> {
-	            
+	    		$userInput = $("#userInput").val();
 	            
 	            $resultsString = $("#results");
 
 	            
 	            console.log("server : "+${result});
-	            console.log("client : "+$userInput);
+	            console.log("client : "+$userInputField.val());
 	            console.log("entryDiff : "+($userInput - ${result}));
 
-	            if ((${result} == $userInput) ) {
+	            if ((${result} == $userInputField.val()) ) {
 	            	console.log("gut");
 	            	$next.show();
 	                $( ".demo-container" ).html( "<p>All new content. <em>You bet!</em></p>" );
