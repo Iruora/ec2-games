@@ -2,6 +2,7 @@ package com.atn.demo.cookies.controller;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,13 +17,16 @@ public class CookiesController {
 
 	private Cookie myCookie;
 
-	@RequestMapping(value = "/exercice/{operation}/{firstNumber}/score", method = RequestMethod.GET)
+	@RequestMapping(value = "/exercice/{operation}/{firstNumber}/score", method = RequestMethod.POST)
 	@ResponseBody
 	protected ModelAndView loadScorePage(
+			
 			@PathVariable("operation") String operation,
 			@PathVariable("firstNumber") int firstNumber, 
 			@RequestParam("success") boolean success,
-			HttpServletRequest request) {
+			HttpServletRequest request,
+			HttpServletResponse response
+		) {
 
 		int score = 0;
 
@@ -30,26 +34,36 @@ public class CookiesController {
 		model.addObject("operation", operation);
 		model.addObject("firstNumber", firstNumber);
 
-		model.addObject("score", score);
+		
 
 		model.setViewName("score");
 
+		//getting cookie
 		myCookie = getCookieByName(operation + "" + firstNumber, request);
-
+		
+		if (myCookie != null)
+			System.out.println("Got this cookie "+myCookie.getName()+"="+myCookie.getValue());
+		
+		
 		if (myCookie == null) {
 
-			// System.out.println("$% /!EXIST/ %$ :" + start);
+			System.out.println("No cookie found it wass null");
 
-			myCookie = new Cookie(operation + "" + firstNumber, "");
+			myCookie = new Cookie(operation + "" + firstNumber, "0");
 
 			myCookie.setMaxAge(3600 * 24);
+			
+			System.out.println("Created Cookie : "+myCookie.getName()+"="+myCookie.getValue()+"?age="+myCookie.getMaxAge());
 		}
+		
 		score = Integer.parseInt(myCookie.getValue()) + 1;
+		model.addObject("score", score);
+		System.out.println("score = "+score);
 		myCookie.setValue(score + "");
 
 		// ----------------------------------------------
 
-		// response.addCookie(cookie);
+		response.addCookie(myCookie);
 
 		if (operation.equals("addition") || operation.equals("soustraction") || operation.equals("multiplication")
 				|| operation.equals("division")) {

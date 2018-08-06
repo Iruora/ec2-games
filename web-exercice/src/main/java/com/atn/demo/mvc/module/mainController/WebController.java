@@ -117,6 +117,7 @@ public class WebController {
 		ModelAndView model = new ModelAndView();
 		model.setViewName("result");
 		model.addObject("operation", operation);
+		model.addObject("firstNumber", firstNumber);
 		// =======================================
 		// final long start = new Date().getTime();
 
