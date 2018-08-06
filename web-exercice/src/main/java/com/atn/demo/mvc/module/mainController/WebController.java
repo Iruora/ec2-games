@@ -87,6 +87,7 @@ public class WebController {
 
 		ModelAndView model = new ModelAndView();
 		model.addObject("title", operation);
+		model.addObject("maxNumberForGeneration", 30);
 		model.setViewName("numbers");
 
 		if (operation.equals("addition") || operation.equals("soustraction") || operation.equals("multiplication")

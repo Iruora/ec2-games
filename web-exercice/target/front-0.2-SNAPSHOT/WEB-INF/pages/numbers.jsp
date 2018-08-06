@@ -17,8 +17,8 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-offset-2">
-				<c:forEach var="i" begin="1" end="30">
-					<a href="/exercice/${title}/${i}" class="btn btn-lg btn-info col-md-2">${i}</a>
+				<c:forEach var="i" begin="1" end="${maxNumberForGeneration}">
+					<a href="/exercice/${title}/${i}" class="btn btn-lg btn-info col-md-2" id="nb-btn-${i}">${i} <span class="badge" id="bage-${i}"></span></a>
 				</c:forEach>
 			</div>
 
@@ -28,4 +28,22 @@
 	<script type="text/javascript" src="/static/js/jquery.js"></script>
 	<script type="text/javascript"
 		src="/static/bootstrap-3.3.7/js/bootstrap.js"></script>
+	<script type="text/javascript">
+		(function() {
+				console.log("enables");
+				for( let i = 1; i <= ${maxNumberForGeneration}; i++ ) {
+					$("#badge-"+i).text();
+					let firstNumber = $("#nb-btn-"+i).text();
+					console.log(firstNumber);
+					$.post(
+						"/exercice/${operation}/"+firstNumber+"/totscore",
+						{},
+						(data) => {
+							console.log("***"+i+"***"+data);
+						}
+					);
+				}
+			}
+		)();
+	</script>
 </body>
