@@ -23,7 +23,8 @@ import antlr.collections.List;
 @Controller
 public class WebController {
 	private Cookie myCookie;
-
+	static String operationString ="";
+	int result = 0;
 	/************************************
 	 * 
 	 * @param request
@@ -113,22 +114,71 @@ public class WebController {
 	
 	) {
 
-		ModelAndView model = new ModelAndView();
-		model.setViewName("result");
+		ModelAndView model = load(operation, firstNumber);
+		
+		
+		model.setViewName("show-result");
+		//model.setViewName("result");
 		model.addObject("operation", operation);
 		model.addObject("firstNumber", firstNumber);
-		float result;
+				
+		
+		
+		
+		return model;
+	}
+	/***********************************************
+	 * 
+	 * @param operation
+	 * @param firstNumber
+	 * @return
+	 */
+	@RequestMapping(value = "/exercice/{operation}/{firstNumber}/result", method = RequestMethod.GET)
+	@ResponseBody
+	protected ModelAndView loadResultPage(@PathVariable("operation") String operation,
+			@PathVariable("firstNumber") int firstNumber, HttpServletResponse response, HttpServletRequest request
+	
+	) {
+
+		ModelAndView model = load(operation, firstNumber);
+		
+		
+		model.setViewName("operation-result");
+		//model.setViewName("result");
+		model.addObject("operation", operation);
+		model.addObject("firstNumber", firstNumber);
+				
+		
+		
+		
+		return model;
+	}
+	/*****************************************
+	 * 
+	 * **
+	 * @param operation
+	 * @param firstNumber
+	 * @return
+	 */
+	ModelAndView load(String operation, int firstNumber) {
+		ModelAndView model = new ModelAndView();
+		model.setViewName("show-result");
+		
+		model.addObject("operation", operation);
+		model.addObject("firstNumber", firstNumber);
+		
 		Random rand = new Random();
 		int pickedNumber;
 
 		switch (operation) {
 		case "addition": {
 			pickedNumber = rand.nextInt(100) + 1;
-			model.addObject("operationString", pickedNumber + " + " + firstNumber + " = ");
+			operationString = pickedNumber + " + " + firstNumber + " = ";
+			model.addObject("operationString", operationString);
 
 			result = (int) (pickedNumber + firstNumber);
 			model.addObject("result", result);
-
+			//request.setAttribute("result", result);
 			
 			return model;
 		}
@@ -138,7 +188,8 @@ public class WebController {
 			model.addObject("operationString", pickedNumber + " - " + firstNumber + " = ");
 			result = (int) (pickedNumber - firstNumber);
 			model.addObject("result", result);
-
+			//request.setAttribute("result", result);
+			
 			return model;
 
 		case "multiplication":
@@ -146,7 +197,9 @@ public class WebController {
 			model.addObject("operationString", pickedNumber + " X " + firstNumber + " = ");
 			result = (int) (pickedNumber * firstNumber);
 			model.addObject("result", result);
-
+			//request.setAttribute("result", result);
+			
+			
 			return model;
 
 		case "division":
@@ -154,9 +207,11 @@ public class WebController {
 			pickedNumber = (rand.nextInt(9) + 1) * firstNumber;
 
 			model.addObject("operationString", pickedNumber + " / " + firstNumber + " = ");
-			result = (float) (pickedNumber / firstNumber);
+			result = (int) (pickedNumber / firstNumber);
 			model.addObject("result", result);
-
+			//request.setAttribute("result", result);
+			
+			
 			return model;
 
 		default:
@@ -164,6 +219,36 @@ public class WebController {
 			return model;
 
 		}
+	}
+	
+	/***********************************************
+	 * 
+	 * @param operation
+	 * @param firstNumber
+	 * @return
+	 */
+	@RequestMapping(value = "/exercice/{operation}/{firstNumber}/load", method = RequestMethod.GET)
+	@ResponseBody
+	protected ModelAndView loadCalcul(@PathVariable("operation") String operation,
+			@PathVariable("firstNumber") int firstNumber, HttpServletResponse response, HttpServletRequest request
+	
+	) {
+		//System.out.println(result);
+		ModelAndView model = new ModelAndView();
+		model.setViewName("result");
+		//model.setViewName("result");
+		model.addObject("operation", operation);
+		model.addObject("firstNumber", firstNumber);
+		//model.addObject("result0", result);
+		
+		//model.addObject("result", result);
+		System.out.println("OpStr : "+operationString);
+		model.addObject("operationString", operationString);
+		//request.setAttribute("result", result);
+		
+		
+		return model;
+		
 
 	}	
 }

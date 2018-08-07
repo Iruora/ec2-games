@@ -61,6 +61,41 @@ public class SessionController {
 			return model;
 		}
 	}
+	
+	@RequestMapping(value = "/exercice/{operation}/{firstNumber}/sc", method = RequestMethod.POST)
+	@ResponseBody
+	protected ModelAndView loadScore(
+			
+			@PathVariable("operation") String operation,
+			@PathVariable("firstNumber") int firstNumber, 
+			@RequestParam("success") boolean success,
+			HttpServletRequest request,
+			HttpServletResponse response
+		) {
+
+		ModelAndView model = new ModelAndView();
+		model.addObject("operation", operation);
+		model.addObject("firstNumber", firstNumber);
+
+		model.setViewName("score");
+		
+		session = request.getSession();
+
+		if(session.getAttribute(operation+firstNumber) == null) {
+			session.setAttribute(operation+firstNumber, 0);
+		}
+		
+		Integer sessAttr = (Integer) session.getAttribute(operation+firstNumber);
+		model.addObject("score", sessAttr);
+		
+		if (operation.equals("addition") || operation.equals("soustraction") || operation.equals("multiplication")
+				|| operation.equals("division")) {
+			return model;
+		} else {
+			model.setViewName("exercice");
+			return model;
+		}
+	}
 	// ===========================================================
 	@RequestMapping(value = "/exercice/{operation}/{firstNumber}/totscore", method = RequestMethod.POST)
 	@ResponseBody
@@ -81,14 +116,11 @@ public class SessionController {
 		model.addObject("firstNumber",firstNumber);
 		
 		session = request.getSession();
-		//System.out.println(operation+firstNumber);
 		if (session.getAttribute(operation+firstNumber) == null) {
 			
 			model.addObject("score",0);
-			//System.out.println(operation + firstNumber+"Null");
 		}
 		else {
-			//System.out.println("Not Null"+session.getAttribute(operation+firstNumber));
 			model.addObject("score",session.getAttribute(operation+firstNumber));
 		}
 		return model;
