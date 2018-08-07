@@ -47,7 +47,7 @@
 				for( let i = 1; i <= ${maxNumberForGeneration}; i++ ) {
 					$("#badge-"+i).text();
 					let firstNumber = $("#nb-btn-"+i).text();
-					console.log(firstNumber);
+					//console.log(firstNumber);
 					$.post(
 						"/exercice/${operation}/"+firstNumber+"/totscore",
 						{},

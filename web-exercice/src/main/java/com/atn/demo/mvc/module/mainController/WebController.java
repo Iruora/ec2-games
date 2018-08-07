@@ -50,8 +50,7 @@ public class WebController {
 	@RequestMapping(value = { "/geomirror" }, method = RequestMethod.GET)
 	protected ModelAndView playGame(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ModelAndView model = new ModelAndView();
-		// model = initData(model);
-		// model.addObject("pageName", "index");
+		
 		model.setViewName("index");
 		return model;
 
@@ -68,7 +67,7 @@ public class WebController {
 	protected ModelAndView loadExercicesPage(HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 		ModelAndView model = new ModelAndView();
-		// model = initData(model);
+		
 		model.addObject("greet", "Hello ! choose operation and a number");
 		model.setViewName("exercice");
 		return model;
@@ -111,20 +110,13 @@ public class WebController {
 	@ResponseBody
 	protected ModelAndView loadOperationPage(@PathVariable("operation") String operation,
 			@PathVariable("firstNumber") int firstNumber, HttpServletResponse response, HttpServletRequest request
-	// ,@RequestParam boolean success
+	
 	) {
 
-		// int scoreStep = 0;
 		ModelAndView model = new ModelAndView();
 		model.setViewName("result");
 		model.addObject("operation", operation);
 		model.addObject("firstNumber", firstNumber);
-		// =======================================
-		// final long start = new Date().getTime();
-
-		// System.out.println("$%start%$ :" + start);
-		// ----------------------------------------------
-		// =======================================
 		float result;
 		Random rand = new Random();
 		int pickedNumber;
@@ -160,7 +152,7 @@ public class WebController {
 		case "division":
 
 			pickedNumber = (rand.nextInt(9) + 1) * firstNumber;
-			// int t[] = { 1, firstNumber / 2, firstNumber };
+
 			model.addObject("operationString", pickedNumber + " / " + firstNumber + " = ");
 			result = (float) (pickedNumber / firstNumber);
 			model.addObject("result", result);

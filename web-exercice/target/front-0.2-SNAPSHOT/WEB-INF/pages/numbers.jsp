@@ -13,12 +13,25 @@
 <title>${title}</title>
 </head>
 <body>
-	<h1 class="well well-lg text-center">${title}</h1>
+
+	<div class="row well well-lg">
+
+		<div class="btn-group col-md-3">
+			<a href="/exercice" class="btn btn-lg btn-primary">Back to exercice</a>
+
+		</div>
+		<div class="well well-lg text-center">
+			<h1>${title}</h1>
+		</div>
+
+	</div>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-offset-2">
 				<c:forEach var="i" begin="1" end="${maxNumberForGeneration}">
-					<a href="/exercice/${title}/${i}" class="btn btn-lg btn-info col-md-2" id="nb-btn-${i}">${i} <span class="badge" id="bage-${i}"></span></a>
+					<a href="/exercice/${title}/${i}"
+						class="btn btn-lg btn-info col-md-2" id="nb-btn-${i}">${i} <span
+						class="badge" id="badge-${i}"></span></a>
 				</c:forEach>
 			</div>
 
@@ -34,12 +47,13 @@
 				for( let i = 1; i <= ${maxNumberForGeneration}; i++ ) {
 					$("#badge-"+i).text();
 					let firstNumber = $("#nb-btn-"+i).text();
-					console.log(firstNumber);
+					//console.log(firstNumber);
 					$.post(
 						"/exercice/${operation}/"+firstNumber+"/totscore",
 						{},
 						(data) => {
-							console.log("***"+i+"***"+data);
+							//console.log("***"+i+"***"+data);
+							$("#badge-"+i).text(data);
 						}
 					);
 				}

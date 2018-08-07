@@ -1,4 +1,4 @@
-package com.atn.demo.cookies.controller;
+package com.atn.demo.session.controller;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -14,9 +14,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class CookiesController {
+public class SessionController {
 
-	private Cookie myCookie;
 	HttpSession session;
 	
 	@RequestMapping(value = "/exercice/{operation}/{firstNumber}/score", method = RequestMethod.POST)
@@ -41,40 +40,19 @@ public class CookiesController {
 		model.setViewName("score");
 		
 		session = request.getSession();
-		
-		//System.out.println("getting Session : " +operation+firstNumber +"...");
-	
-		//session.getAttribute(operation+firstNumber);
+
 		if(session.getAttribute(operation+firstNumber) == null) {
-			//System.out.println("Session not Found !\nProceed to creation !");
 			session.setAttribute(operation+firstNumber, 0);
-			//System.out.println("Session created with attribute=> "+session.getAttribute(operation+firstNumber));
 		}
-		else {
-			//System.out.println("Session Found with success !");
-			//System.out.println("Session (" +operation+firstNumber+")  "+session.getAttribute(operation+firstNumber));
-		}
+		
 		
 
 		Integer sessAttr = (Integer) session.getAttribute(operation+firstNumber);
-		//System.out.println("sessAttr (before) : "+sessAttr);
 		sessAttr++;
-		//System.out.println("sessAttr (after) : "+sessAttr);
-		//System.out.println("score : "+sessAttr);
 		
 		model.addObject("score", sessAttr);
-				
-		//System.out.println("=========Setting session attribute to score============= ");
-		
 		session.setAttribute(operation+firstNumber, sessAttr);
 		
-		//System.out.println("seesion attribute becomes : "+session.getAttribute("operation+firstNumber"));		
-		//System.out.println("====================== ");
-		
-		// ----------------------------------------------
-
-		//response.addCookie(myCookie);
-
 		if (operation.equals("addition") || operation.equals("soustraction") || operation.equals("multiplication")
 				|| operation.equals("division")) {
 			return model;
@@ -107,29 +85,13 @@ public class CookiesController {
 		if (session.getAttribute(operation+firstNumber) == null) {
 			
 			model.addObject("score",0);
-			System.out.println(operation + firstNumber+"Null");
+			//System.out.println(operation + firstNumber+"Null");
 		}
 		else {
-			System.out.println("Not Null"+session.getAttribute(operation+firstNumber));
+			//System.out.println("Not Null"+session.getAttribute(operation+firstNumber));
 			model.addObject("score",session.getAttribute(operation+firstNumber));
 		}
 		return model;
 	}
-	
-	
-	
-	
-	
-	// ===========================================================
-	private Cookie getCookieByName(String cookieName, HttpServletRequest request) {
-		if (request.getCookies() != null) {
-			for (Cookie cookie : request.getCookies()) {
-				if (cookie.getName().equals(cookieName)) {
 
-					return cookie;
-				}
-			}
-		}
-		return null;
-	}
 }
