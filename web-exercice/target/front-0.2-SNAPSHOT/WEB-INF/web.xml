@@ -4,4 +4,14 @@
   <welcome-file-list>
     <welcome-file>/welcome</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>sss</display-name>
+    <servlet-name>sss</servlet-name>
+    <servlet-class>com.atn.demo.mvc.module.mainController.sss</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>sss</servlet-name>
+    <url-pattern>/sss</url-pattern>
+  </servlet-mapping>
 </web-app>

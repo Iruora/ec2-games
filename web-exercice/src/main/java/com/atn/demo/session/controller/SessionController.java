@@ -80,7 +80,7 @@ public class SessionController {
 		model.setViewName("score");
 		
 		session = request.getSession();
-
+		session.setMaxInactiveInterval(60*60*24*365);
 		if(session.getAttribute(operation+firstNumber) == null) {
 			session.setAttribute(operation+firstNumber, 0);
 		}
@@ -116,7 +116,9 @@ public class SessionController {
 		model.addObject("firstNumber",firstNumber);
 		
 		session = request.getSession();
+		session.setMaxInactiveInterval(60*60*24*365);
 		if (session.getAttribute(operation+firstNumber) == null) {
+			
 			
 			model.addObject("score",0);
 		}

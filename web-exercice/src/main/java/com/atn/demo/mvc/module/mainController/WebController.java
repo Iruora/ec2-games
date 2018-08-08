@@ -2,6 +2,8 @@ package com.atn.demo.mvc.module.mainController;
 
 import java.time.Period;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 import javax.print.attribute.standard.DateTimeAtCompleted;
@@ -22,20 +24,23 @@ import antlr.collections.List;
 
 @Controller
 public class WebController {
-	private Cookie myCookie;
-	static String operationString ="";
-	int result = 0;
+	//private Cookie myCookie;
+	//String operationString ;
+	//int result = 0;
+	static HashMap<String, Object> map = new HashMap<>() ; 
 	/************************************
 	 * 
 	 * @param request
 	 * @param response
 	 * @return
 	 * @throws Exception
+	 * ============================HOME ROUTE==================================
 	 */
+	 
 	@RequestMapping(value = { "/" }, method = RequestMethod.GET)
 	protected ModelAndView welcomeGame(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ModelAndView model = new ModelAndView();
-
+		//=======setting view name--------------
 		model.setViewName("home");
 		return model;
 
@@ -47,11 +52,12 @@ public class WebController {
 	 * @param response
 	 * @return
 	 * @throws Exception
+	 * ============================Unity Game Route==================================
 	 */
 	@RequestMapping(value = { "/geomirror" }, method = RequestMethod.GET)
 	protected ModelAndView playGame(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ModelAndView model = new ModelAndView();
-		
+		//=======setting view name--------------
 		model.setViewName("index");
 		return model;
 
@@ -63,13 +69,15 @@ public class WebController {
 	 * @param response
 	 * @return
 	 * @throws Exception
+	 * ============================Exercices Route (+ - * /)==================================
 	 */
 	@RequestMapping(value = { "/exercice" }, method = RequestMethod.GET)
 	protected ModelAndView loadExercicesPage(HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 		ModelAndView model = new ModelAndView();
-		
+		//--------adding objects
 		model.addObject("greet", "Hello ! choose operation and a number");
+		//=======setting view name--------------
 		model.setViewName("exercice");
 		return model;
 
@@ -80,20 +88,24 @@ public class WebController {
 	 * @param operation
 	 * @param firstNumber
 	 * @return
+	 * ============================Numbers Route ROUTE==================================
 	 */
 	@RequestMapping(value = "/exercice/{operation}", method = RequestMethod.GET)
 	@ResponseBody
 	protected ModelAndView loadNumbersPage(@PathVariable("operation") String operation) {
 
 		ModelAndView model = new ModelAndView();
+		//--------adding objects
 		model.addObject("title", operation);
 		model.addObject("maxNumberForGeneration", 30);
+		//------------setting view name--------------
 		model.setViewName("numbers");
-
+		//-------------------------------------------
 		if (operation.equals("addition") || operation.equals("soustraction") || operation.equals("multiplication")
 				|| operation.equals("division")) {
 			return model;
 		} else {
+			//=======setting view name--------------
 			model.setViewName("exercice");
 			return model;
 		}
@@ -106,6 +118,7 @@ public class WebController {
 	 * @param operation
 	 * @param firstNumber
 	 * @return
+	 *============================== operation bloc Route================================================
 	 */
 	@RequestMapping(value = "/exercice/{operation}/{firstNumber}", method = RequestMethod.GET)
 	@ResponseBody
@@ -114,14 +127,21 @@ public class WebController {
 	
 	) {
 
-		ModelAndView model = load(operation, firstNumber);
+		//ModelAndView model = loadResultPage(operation, firstNumber, response, request);
+		ModelAndView model = new ModelAndView();
+		int countDownStart = 90;
 		
-		
+		//=======setting view name--------------
 		model.setViewName("show-result");
-		//model.setViewName("result");
+		//---------------------------------
+		
+		//--------adding objects
 		model.addObject("operation", operation);
 		model.addObject("firstNumber", firstNumber);
-				
+		model.addObject("countDownStart", countDownStart);
+		
+		model.addObject("operationString", map.get("operationString"));
+		model.addObject("result", map.get("result"));	
 		
 		
 		
@@ -132,6 +152,7 @@ public class WebController {
 	 * @param operation
 	 * @param firstNumber
 	 * @return
+	 *============================== result as Text Route===================================
 	 */
 	@RequestMapping(value = "/exercice/{operation}/{firstNumber}/result", method = RequestMethod.GET)
 	@ResponseBody
@@ -143,14 +164,17 @@ public class WebController {
 		ModelAndView model = load(operation, firstNumber);
 		
 		
-		model.setViewName("operation-result");
+		//--------getting objects from load model
+		
+		//=======setting view name--------------
+		model.setViewName("result");
 		//model.setViewName("result");
+		
+		//--------adding objects
 		model.addObject("operation", operation);
 		model.addObject("firstNumber", firstNumber);
-				
-		
-		
-		
+		model.addObject("operationString", map.get("operationString"));
+		model.addObject("result", map.get("result"));	
 		return model;
 	}
 	/*****************************************
@@ -159,96 +183,106 @@ public class WebController {
 	 * @param operation
 	 * @param firstNumber
 	 * @return
+	 *============================== load operation and result===================================
 	 */
 	ModelAndView load(String operation, int firstNumber) {
 		ModelAndView model = new ModelAndView();
-		model.setViewName("show-result");
 		
+		//-----adding to hashMap
+		map.put("operation", operation);
+		map.put("firstNumber", firstNumber);
+		//--------adding objects
 		model.addObject("operation", operation);
 		model.addObject("firstNumber", firstNumber);
 		
 		Random rand = new Random();
+		int result = 0;
 		int pickedNumber;
-
+		String operationString;
+		//*************************************************************
 		switch (operation) {
-		case "addition": {
+		
+		case "addition": 
 			pickedNumber = rand.nextInt(100) + 1;
 			operationString = pickedNumber + " + " + firstNumber + " = ";
-			model.addObject("operationString", operationString);
-
+			
 			result = (int) (pickedNumber + firstNumber);
+			//-----adding to hashMap
+			map.put("operationString", operationString);
+			map.put("result", result);
+			//--------adding objects
+			model.addObject("operationString", operationString);
 			model.addObject("result", result);
-			//request.setAttribute("result", result);
+			//----------------
+			System.out.println("load :: op 1st num pickedNumber : "+operation+" "+firstNumber+" "+pickedNumber+" op => "+operationString);
+			//---------------
 			
 			return model;
-		}
+		
 
 		case "soustraction":
 			pickedNumber = rand.nextInt(100) + (firstNumber + 1);
-			model.addObject("operationString", pickedNumber + " - " + firstNumber + " = ");
+			operationString = pickedNumber + " - " + firstNumber + " = ";
+			
 			result = (int) (pickedNumber - firstNumber);
+			//-----adding to hashMap
+			map.put("operationString", operationString);
+			map.put("result", result);
+			//--------adding objects
+			model.addObject("operationString", operationString);
 			model.addObject("result", result);
-			//request.setAttribute("result", result);
+			//----------------
+			System.out.println("load ::op 1st num pickedNumber : "+operation+" "+firstNumber+" "+pickedNumber+" op => "+operationString);
+			//---------------
 			
 			return model;
 
 		case "multiplication":
 			pickedNumber = rand.nextInt(11);
-			model.addObject("operationString", pickedNumber + " X " + firstNumber + " = ");
+
+			operationString = pickedNumber + " X " + firstNumber + " = ";
 			result = (int) (pickedNumber * firstNumber);
+			
+			//-----adding to hashMap
+			map.put("operationString", operationString);
+			map.put("result", result);
+			//--------adding objects
+			model.addObject("operationString", operationString);
 			model.addObject("result", result);
-			//request.setAttribute("result", result);
-			
-			
+		
+			//----------------
+			System.out.println("load :: op 1st num pickedNumber : "+operation+" "+firstNumber+" "+pickedNumber+" op => "+operationString);
+			//---------------
 			return model;
 
 		case "division":
 
 			pickedNumber = (rand.nextInt(9) + 1) * firstNumber;
-
-			model.addObject("operationString", pickedNumber + " / " + firstNumber + " = ");
+			operationString = pickedNumber + " / " + firstNumber + " = ";
+			
 			result = (int) (pickedNumber / firstNumber);
+			
+			//-----adding to hashMap
+			map.put("operationString", operationString);
+			map.put("result", result);
+			//--------adding objects
+			model.addObject("operationString", operationString);
 			model.addObject("result", result);
-			//request.setAttribute("result", result);
-			
-			
+		
+			//----------------
+			System.out.println("load :: op 1st num pickedNumber : "+operation+" "+firstNumber+" "+pickedNumber+" op => "+operationString);
+			//---------------
 			return model;
 
 		default:
+			//---------Setting view name-----------
 			model.setViewName("exercice");
+			//-------------------------------
+			//----------------
+			System.out.println("load :: op 1st num pickedNumber : "+operation+" "+firstNumber+" "+"none");
+			//---------------
 			return model;
-
 		}
+		
 	}
-	
-	/***********************************************
-	 * 
-	 * @param operation
-	 * @param firstNumber
-	 * @return
-	 */
-	@RequestMapping(value = "/exercice/{operation}/{firstNumber}/load", method = RequestMethod.GET)
-	@ResponseBody
-	protected ModelAndView loadCalcul(@PathVariable("operation") String operation,
-			@PathVariable("firstNumber") int firstNumber, HttpServletResponse response, HttpServletRequest request
-	
-	) {
-		//System.out.println(result);
-		ModelAndView model = new ModelAndView();
-		model.setViewName("result");
-		//model.setViewName("result");
-		model.addObject("operation", operation);
-		model.addObject("firstNumber", firstNumber);
-		//model.addObject("result0", result);
-		
-		//model.addObject("result", result);
-		System.out.println("OpStr : "+operationString);
-		model.addObject("operationString", operationString);
-		//request.setAttribute("result", result);
-		
-		
-		return model;
-		
-
-	}	
 }
