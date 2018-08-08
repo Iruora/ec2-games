@@ -21,3 +21,24 @@
 	font-size: 2.2rem;
 	font-weight: bolder;
 }
+
+.gold-btn {
+    background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #be9231 30%, rgb(184, 148, 64) 40%, transparent 80%),
+                radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #c29734 62.5%, #d8a733 100%);
+}
+
+.silver-btn {
+	
+	background: radial-gradient(ellipse farthest-corner at right bottom, #EAEAEA 0%, #DBDBDB 8%, #ADA996 30%, rgb(150, 149, 146) 40%, transparent 80%),
+                radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #DBDBDB 8%, #ADA996 25%, #94918a 62.5%, #aaaaa8 100%);
+	background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); 
+	
+	
+}
+
+.jupiter {
+	background: #ffd89b;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #19547b, #ffd89b);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #19547b, #ffd89b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}

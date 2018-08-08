@@ -13,7 +13,8 @@
 <title>${title}</title>
 </head>
 <body>
-
+	
+	
 	<div class="row well well-lg">
 
 		<div class="btn-group col-md-3">
@@ -25,13 +26,16 @@
 		</div>
 
 	</div>
+	
+	
+	</div>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-offset-2">
 				<c:forEach var="i" begin="1" end="${maxNumberForGeneration}">
 					<a href="/exercice/${title}/${i}"
-						class="btn btn-lg btn-info col-md-2" id="nb-btn-${i}">${i} <span
-						class="badge" id="badge-${i}"></span></a>
+						class="btn btn-lg btn-info col-md-2" id="nb-btn-${i}">${i} 
+						<span class="badge" id="badge-${i}"></span></a>
 				</c:forEach>
 			</div>
 
@@ -44,8 +48,23 @@
 	<script type="text/javascript">
 		(function() {
 				console.log("enables");
+				let gold = ${goldNumber};
+				let silver = ${silverNumber};
+				//$("p#44.test").css("background-color", "yellow");
 				for( let i = 1; i <= ${maxNumberForGeneration}; i++ ) {
 					$("#badge-"+i).text();
+					//---------------------------------------------
+					if ( gold != null && silver != null) {
+						if(i <= silver) {
+							//$("#nb-btn-"+i).css("background-color", "#C0C0C0");
+							$("#nb-btn-"+i).addClass( "silver-btn" );
+						}
+						else if (i >= gold) {
+							//$("#nb-btn-"+i).css("background-color", "#D4AF37");
+							$("#nb-btn-"+i).addClass( "gold-btn" );
+						}
+						else $("#nb-btn-"+i).addClass( "jupiter" );
+					}
 					let firstNumber = $("#nb-btn-"+i).text();
 					//console.log(firstNumber);
 					$.post(

@@ -192,6 +192,7 @@
 			            	else {
 			            		//console.log("Oh snap!");
 			            		$next.hide();
+			            		$("#userInput").val("");
 			                	$resultsString.html("<div class='alert alert-danger alert-text' role='alert' id='failure-alert'>oops !</div>");
 			            	}
 						

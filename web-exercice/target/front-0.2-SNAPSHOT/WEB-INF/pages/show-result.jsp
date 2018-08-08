@@ -159,7 +159,7 @@
 			            		$next.show();
 			            		//--------------------------------
 			            		
-			            		$userInputField.on("keyup", e => {
+			            		//$userInputField.on("keyup", e => {
 // 									if ($userInputField.val() != "") {
 // 										$("#verifBtn").prop( "disabled", false );
 // 									}
@@ -169,7 +169,7 @@
 										console.log("fleche=>");
 			        					$("#next").click();
 			    					}
-								});
+								
 			            		//--------------------------------
 			                	$( ".demo-container" ).html( "<p>All new content. <em>You bet!</em></p>" );
 			                	$resultsString.html("<div class='alert alert-success alert-text' role='alert' id='success-alert' > well done ! </div> ");

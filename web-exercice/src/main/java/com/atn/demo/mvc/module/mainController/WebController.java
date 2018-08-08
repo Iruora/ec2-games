@@ -94,10 +94,15 @@ public class WebController {
 	@ResponseBody
 	protected ModelAndView loadNumbersPage(@PathVariable("operation") String operation) {
 
+		int goldNumber = 7;
+		int silverNumber = 5;
+		
 		ModelAndView model = new ModelAndView();
 		//--------adding objects
 		model.addObject("title", operation);
 		model.addObject("maxNumberForGeneration", 30);
+		model.addObject("goldNumber", goldNumber);
+		model.addObject("silverNumber", silverNumber);
 		//------------setting view name--------------
 		model.setViewName("numbers");
 		//-------------------------------------------
