@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <link href="/static/bootstrap-3.3.7/css/bootstrap.min.css"
 	rel="stylesheet" media="screen">
 
@@ -22,7 +23,7 @@
 
 		</div>
 		<div class="well well-lg text-center">
-			<h1>${title}</h1>
+			<h1 class="title">${title}</h1>
 		</div>
 
 	</div>

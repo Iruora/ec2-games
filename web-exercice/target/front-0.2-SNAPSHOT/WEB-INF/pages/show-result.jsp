@@ -9,6 +9,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Result</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <link href="/static/bootstrap-3.3.7/css/bootstrap.min.css"
 	rel="stylesheet" media="screen">
 <link href="/static/css/design.css" rel="stylesheet" media="screen">
@@ -192,6 +193,7 @@
 			            	else {
 			            		//console.log("Oh snap!");
 			            		$next.hide();
+			            		$("#userInput").val("");
 			                	$resultsString.html("<div class='alert alert-danger alert-text' role='alert' id='failure-alert'>oops !</div>");
 			            	}
 						

@@ -9,6 +9,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Result</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <link href="/static/bootstrap-3.3.7/css/bootstrap.min.css"
 	rel="stylesheet" media="screen">
 <link href="/static/css/design.css" rel="stylesheet" media="screen">
@@ -144,7 +145,7 @@
 			    			}
 						});
 						//=======================================
-			    		$("#verifBtn").on("click", (e)=> {
+			    		$("#verifBtn").on("click", (e) => {
 			    			$userInput = $("#userInput").val();
 
 			            	$resultsString = $("#results");
@@ -159,17 +160,6 @@
 			            		$next.show();
 			            		//--------------------------------
 			            		
-			            		//$userInputField.on("keyup", e => {
-// 									if ($userInputField.val() != "") {
-// 										$("#verifBtn").prop( "disabled", false );
-// 									}
-// 									else $("#verifBtn").prop( "disabled", true );
-
-									if (e.keyCode === 39) {
-										console.log("fleche=>");
-			        					$("#next").click();
-			    					}
-								
 			            		//--------------------------------
 			                	$( ".demo-container" ).html( "<p>All new content. <em>You bet!</em></p>" );
 			                	$resultsString.html("<div class='alert alert-success alert-text' role='alert' id='success-alert' > well done ! </div> ");

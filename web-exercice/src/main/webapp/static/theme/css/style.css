@@ -1,10 +1,24 @@
 body{
-	//background: url("http://41.media.tumblr.com/97e3b4644aa1dda650c3728eea386520/tumblr_nwenywscXB1slhhf0o1_1280.jpg") no-repeat 0 0 ;
+	
 	background-size:cover; 
-	//color: red;
+	
+	background: #2C3E50;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #4CA1AF, #2C3E50);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #4CA1AF, #2C3E50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+	
 
 
 }
+
+#bg-pic {
+	background-size: cover;
+	width : 100vw;
+	height: 100vh;
+	z-index: -100;	
+	position: absolute;
+}
+
 .hide {
 
 display: none;
@@ -52,4 +66,21 @@ p {
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
 	border: 1px solid #000;
+}
+
+.zoom:hover {
+    
+    transform: scale(1.5); 
+
+#penguin {
+		-webkit-animation: rotation 2s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+		from {
+				-webkit-transform: rotate(-10deg);
+		}
+		to {
+				-webkit-transform: rotate(10deg);
+		}
 }
