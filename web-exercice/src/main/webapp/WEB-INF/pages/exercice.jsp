@@ -6,10 +6,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-<link href="/static/bootstrap-3.3.7/css/bootstrap.min.css"
+<link href="${parenturl}/static/bootstrap-3.3.7/css/bootstrap.min.css"
 	rel="stylesheet" media="screen">
 
-<link href="/static/css/design.css" rel="stylesheet" media="screen">
+<link href="${parenturl}/static/css/design.css" rel="stylesheet" media="screen">
 
 <title>exercice</title>
 </head>
@@ -36,9 +36,9 @@
 		</div>
 	</div>
 
-	<script type="text/javascript" src="/static/js/jquery.js"></script>
+	<script type="text/javascript" src="${parenturl}/static/js/jquery.js"></script>
 	<script type="text/javascript"
-		src="/static/bootstrap-3.3.7/js/bootstrap.js"></script>
+		src="${parenturl}/static/bootstrap-3.3.7/js/bootstrap.js"></script>
 
 </body>
 </html>
