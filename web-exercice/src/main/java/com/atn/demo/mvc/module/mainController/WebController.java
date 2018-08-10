@@ -1,13 +1,11 @@
 package com.atn.demo.mvc.module.mainController;
 
-import java.time.Period;
-import java.util.Date;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-import javax.print.attribute.standard.DateTimeAtCompleted;
-import javax.servlet.http.Cookie;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -38,7 +36,7 @@ public class WebController {
 	 */
 	 
 	@RequestMapping(value = { "/" }, method = RequestMethod.GET)
-	protected ModelAndView welcomeGame(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	public  ModelAndView welcomeGame(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ModelAndView model = new ModelAndView();
 		//=======setting view name--------------
 		model.setViewName("home");
@@ -55,7 +53,7 @@ public class WebController {
 	 * ============================Unity Game Route==================================
 	 */
 	@RequestMapping(value = { "/geomirror" }, method = RequestMethod.GET)
-	protected ModelAndView playGame(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	public  ModelAndView playGame(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ModelAndView model = new ModelAndView();
 		//=======setting view name--------------
 		model.setViewName("index");
@@ -72,7 +70,7 @@ public class WebController {
 	 * ============================Exercices Route (+ - * /)==================================
 	 */
 	@RequestMapping(value = { "/exercice" }, method = RequestMethod.GET)
-	protected ModelAndView loadExercicesPage(HttpServletRequest request, HttpServletResponse response)
+	public  ModelAndView loadExercicesPage(HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 		ModelAndView model = new ModelAndView();
 		//--------adding objects
@@ -92,7 +90,7 @@ public class WebController {
 	 */
 	@RequestMapping(value = "/exercice/{operation}", method = RequestMethod.GET)
 	@ResponseBody
-	protected ModelAndView loadNumbersPage(@PathVariable("operation") String operation) {
+	public  ModelAndView loadNumbersPage(@PathVariable("operation") String operation) {
 
 		int goldNumber = 7;
 		int silverNumber = 5;
@@ -127,7 +125,7 @@ public class WebController {
 	 */
 	@RequestMapping(value = "/exercice/{operation}/{firstNumber}", method = RequestMethod.GET)
 	@ResponseBody
-	protected ModelAndView loadOperationPage(@PathVariable("operation") String operation,
+	public  ModelAndView loadOperationPage(@PathVariable("operation") String operation,
 			@PathVariable("firstNumber") int firstNumber, HttpServletResponse response, HttpServletRequest request
 	
 	) {
@@ -161,7 +159,7 @@ public class WebController {
 	 */
 	@RequestMapping(value = "/exercice/{operation}/{firstNumber}/result", method = RequestMethod.GET)
 	@ResponseBody
-	protected ModelAndView loadResultPage(@PathVariable("operation") String operation,
+	public  ModelAndView loadResultPage(@PathVariable("operation") String operation,
 			@PathVariable("firstNumber") int firstNumber, HttpServletResponse response, HttpServletRequest request
 	
 	) {
