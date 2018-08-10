@@ -112,14 +112,14 @@ public class SessionController {
 		ModelAndView model = new ModelAndView();
 		
 		model.setViewName("totscore");
+		
 		model.addObject("operation",operation);
 		model.addObject("firstNumber",firstNumber);
 		
 		session = request.getSession();
 		session.setMaxInactiveInterval(60*60*24*365);
-		if (session.getAttribute(operation+firstNumber) == null) {
-			
-			
+
+		if (session.getAttribute(operation+firstNumber) == null) {	
 			model.addObject("score",0);
 		}
 		else {

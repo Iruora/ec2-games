@@ -36,7 +36,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 		.authorizeRequests()                                                                
-			.antMatchers("/static/**", "/notconnected/login","/**").permitAll()
+			.antMatchers("/static/**"/*, "/notconnected/login"*/,"/**").permitAll()
 			//.antMatchers("/admin/**").hasRole("ADMIN")
 			//	.antMatchers("/connected/**").hasRole("USER")
 			//.antMatchers("/connected/**").access("hasRole('ADMIN') and hasRole('USER')")
@@ -45,7 +45,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.formLogin().loginPage("/notconnected/login").usernameParameter("username")
 				.passwordParameter("password").and().logout()
 				.logoutSuccessUrl("/notconnected/login?logout").and().exceptionHandling()
-				.accessDeniedPage("/notconnected/403").and().csrf();
+				.accessDeniedPage("/notconnected/403").and().csrf().disable();
+		
 	}
 
 	@Override

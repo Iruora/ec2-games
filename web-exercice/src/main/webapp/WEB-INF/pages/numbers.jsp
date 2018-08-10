@@ -15,7 +15,6 @@
 </head>
 <body>
 	
-	
 	<div class="row well well-lg">
 
 		<div class="btn-group col-md-3">
@@ -67,12 +66,12 @@
 						else $("#nb-btn-"+i).addClass( "jupiter" );
 					}
 					let firstNumber = $("#nb-btn-"+i).text();
-					//console.log(firstNumber);
+					console.log("firstNumber"+firstNumber+"--"+"/exercice/${operation}/"+firstNumber+"/totscore");
 					$.post(
 						"/exercice/${operation}/"+firstNumber+"/totscore",
 						{},
 						(data) => {
-							//console.log("***"+i+"***"+data);
+							//console.log("***"+i+"***"+data+${operation});
 							$("#badge-"+i).text(data);
 						}
 					);

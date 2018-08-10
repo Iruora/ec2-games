@@ -89,7 +89,7 @@
 				{success: true},
 				data => {
 
-					//console.log("Scooooooooooooore !"+data);
+					console.log("Scooooooooooooore !"+data+${operation}+${firstNumber});
 					$("#scoreBadge").text(data);
 				}
         	);
