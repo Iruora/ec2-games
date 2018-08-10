@@ -178,6 +178,8 @@
 			                	$("#verifBtn").off("click");
 			                	$("#userInput").val("");
 			                	$("#userInput").hide();
+			                	$("#refresh-btn").click();
+			                    	
 			            	}
 			            	else {
 			            		//console.log("Oh snap!");

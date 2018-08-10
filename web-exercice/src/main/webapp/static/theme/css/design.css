@@ -31,7 +31,8 @@
 	
 	background: radial-gradient(ellipse farthest-corner at right bottom, #EAEAEA 0%, #DBDBDB 8%, #ADA996 30%, rgb(150, 149, 146) 40%, transparent 80%),
                 radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #DBDBDB 8%, #ADA996 25%, #94918a 62.5%, #aaaaa8 100%);
-	background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); 
+	background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
+	color: #000;
 	
 	
 }
