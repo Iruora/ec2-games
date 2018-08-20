@@ -74,7 +74,7 @@ public class WebController {
 			throws Exception {
 		ModelAndView model = new ModelAndView();
 		//--------adding objects
-		model.addObject("greet", "Hello ! choose operation and a number");
+		model.addObject("greet", "Hello ! choose operation");
 		//=======setting view name--------------
 		model.setViewName("exercice");
 		return model;
