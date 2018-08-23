@@ -22,7 +22,7 @@
 			</a>
 			<div class="btn-group ">
 				<a href="/exercice" class="btn btn-lg btn-primary">Back to
-					exercice</a> <a href="/exercice/${operation}"
+					exercices</a> <a href="/exercice/${operation}"
 					class="btn btn-lg btn-info">Back to numbers</a>
 			</div>
 			<button class="btn btn-success btn-lg" type="button">
