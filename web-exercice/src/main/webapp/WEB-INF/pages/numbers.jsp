@@ -18,7 +18,7 @@
 	<div class="row well well-lg">
 
 		<div class="btn-group col-md-3">
-			<a href="/exercice" class="btn btn-lg btn-primary">Back to exercice</a>
+			<a href="/exercice" class="btn btn-lg btn-primary">Back to exercices</a>
 
 		</div>
 		<div class="well well-lg text-center">
