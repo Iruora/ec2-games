@@ -11,7 +11,7 @@
 
 <link href="${parenturl}/static/css/design.css" rel="stylesheet" media="screen">
 
-<title>exercice</title>
+<title>exercices</title>
 </head>
 <body>
 
