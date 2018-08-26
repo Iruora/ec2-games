@@ -11,11 +11,11 @@
 		<img src="/static/image/bg.png" id="bg-pic">
 		<div class="container">
 			<div class="row">
-				<img id="penguin" alt="geomirroir" src="/static/image/penguin.png" width="300px" height="300px" class="col-md-3 col-md-offset-3">
+				<img id="penguin" alt="geomirroir" src="/static/image/penguin.png" width="200px" height="200px" class="col-md-3 col-md-offset-3">
 			</div>
 			<div class="row">
-				<div class=" col-md-6"><a href="${parenturl}geomirror/"><img class="zoom" alt="geomirroir" src="/static/image/geomirror.png" width="300px" height="300px"></a></div>
-				<div class=" col-md-6"><a href="${parenturl}exercice/"><img class="zoom" alt="calculus" src="/static/image/calculus.png" width="300px" height="300px"></a></div>
+				<div class=" col-md-6"><a href="${parenturl}geomirror/"><img class="zoom" alt="geomirroir" src="/static/image/geomirror.png" width="200px" height="200px"></a></div>
+				<div class=" col-md-6"><a href="${parenturl}exercice/"><img class="zoom" alt="calculus" src="/static/image/calculus.png" width="200px" height="200px"></a></div>
 			</div>
 			
 		</div>

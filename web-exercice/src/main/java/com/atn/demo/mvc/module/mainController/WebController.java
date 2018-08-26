@@ -78,7 +78,6 @@ public class WebController {
 		//=======setting view name--------------
 		model.setViewName("exercice");
 		return model;
-
 	}
 
 	/***********************************************
