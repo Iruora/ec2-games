@@ -9,17 +9,17 @@
 	</head>
 	<body>
 		<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Juokinga</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="${parenturl}geomirror/">Geomiroir</a></li>
-      <li><a href="${parenturl}exercice/">Calculus</a></li>
-    </ul>
-  </div>
-</nav>
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">Juokinga</a>
+				</div>
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Home</a></li>
+					<li><a href="${parenturl}geomirror/">Geomiroir</a></li>
+					<li><a href="${parenturl}exercice/">Calculus</a></li>
+				</ul>
+			</div>
+		</nav>
 		<img src="/static/image/bg.png" id="bg-pic">
 		<div class="container">
 			<div class="row">
