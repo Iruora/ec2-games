@@ -23,7 +23,7 @@
 		<img src="/static/image/bg.png" id="bg-pic">
 		<div class="container">
 			<div class="row">
-				<img id="penguin" alt="geomirroir" src="/static/image/penguin.png" width="200px" height="250px" class="col-md-3 col-md-offset-3">
+				<img id="penguin" alt="geomirroir" src="/static/image/penguin.png" width="200px" height="250px" class="col-md-3 col-md-offset-5">
 			</div>
 			<div class="row">
 				<div class="col-md-offset-2 col-md-5"><a href="${parenturl}geomirror/"><img class="zoom" alt="geomirroir" src="/static/image/geomirror.png" width="250px" height="250px"></a></div>

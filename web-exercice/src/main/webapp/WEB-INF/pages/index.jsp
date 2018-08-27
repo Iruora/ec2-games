@@ -40,7 +40,7 @@
 		</div>
 	</nav>
 	<div class="webgl-content game-container">
-		<div id="gameContainer" style="width: 760px; height: 400px"></div>
+		<div id="gameContainer" style="width: 960px; height: 600px"></div>
 		<div class="footer">
 			<div class="webgl-logo"></div>
 			<div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
