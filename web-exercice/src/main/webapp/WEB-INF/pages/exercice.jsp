@@ -22,13 +22,13 @@
 					</div>
 					<ul class="nav navbar-nav">
 						<li>
-							<a href="${parenturl}">Home</a>
+							<a href="/">Home</a>
 						</li>
 						<li >
-							<a href="${parenturl}geomirror/">Geomiroir</a>
+							<a href="/geomirror/">Geomiroir</a>
 						</li>
 						<li class="active">
-							<a href="${parenturl}exercice/">Calculus</a>
+							<a href="/exercice/">Calculus</a>
 						</li>
 					</ul>
 				</div>

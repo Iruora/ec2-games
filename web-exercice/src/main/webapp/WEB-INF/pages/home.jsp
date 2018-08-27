@@ -14,9 +14,9 @@
 					<a class="navbar-brand" href="#">Juokinga</a>
 				</div>
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="${parenturl}geomirror/">Geomiroir</a></li>
-					<li><a href="${parenturl}exercice/">Calculus</a></li>
+					<li class="active"><a href="/">Home</a></li>
+					<li><a href="/geomirror/">Geomiroir</a></li>
+					<li><a href="/exercice/">Calculus</a></li>
 				</ul>
 			</div>
 		</nav>
