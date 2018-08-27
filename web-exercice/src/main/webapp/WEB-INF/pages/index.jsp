@@ -6,6 +6,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>Unity WebGL Player | Stage</title>
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link href="${parenturl}/static/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<link href="${parenturl}/static/css/style.css" rel="stylesheet" media="screen">
 	<link rel="shortcut icon" href="${parenturl}/static/TemplateData/favicon.ico">
 	<link rel="stylesheet" href="${parenturl}/static/TemplateData/style.css">
@@ -46,6 +47,8 @@
 			<div class="title">GeoMirror</div>
 		</div>
 	</div>
+	<script type="text/javascript" src="${parenturl}/static/js/jquery.js"></script>
+	<script type="text/javascript" src="${parenturl}/static/bootstrap-3.3.7/js/bootstrap.js"></script>
 </body>
 
 </html>
