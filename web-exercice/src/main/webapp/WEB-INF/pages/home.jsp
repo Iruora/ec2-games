@@ -11,12 +11,12 @@
 		<nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">WebSiteName</a>
+      <a class="navbar-brand" href="#">Juokinga</a>
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Geomiroir</a></li>
-      <li><a href="#">Calculus</a></li>
+      <li><a href="${parenturl}geomirror/">Geomiroir</a></li>
+      <li><a href="${parenturl}exercice/">Calculus</a></li>
     </ul>
   </div>
 </nav>
@@ -26,8 +26,8 @@
 				<img id="penguin" alt="geomirroir" src="/static/image/penguin.png" width="200px" height="250px" class="col-md-3 col-md-offset-3">
 			</div>
 			<div class="row">
-				<div class=" col-md-6"><a href="${parenturl}geomirror/"><img class="zoom" alt="geomirroir" src="/static/image/geomirror.png" width="200px" height="250px"></a></div>
-				<div class=" col-md-6"><a href="${parenturl}exercice/"><img class="zoom" alt="calculus" src="/static/image/calculus.png" width="200px" height="250px"></a></div>
+				<div class=" col-md-6"><a href="${parenturl}geomirror/"><img class="zoom" alt="geomirroir" src="/static/image/geomirror.png" width="250px" height="250px"></a></div>
+				<div class=" col-md-6"><a href="${parenturl}exercice/"><img class="zoom" alt="calculus" src="/static/image/calculus.png" width="250px" height="250px"></a></div>
 			</div>
 			
 		</div>
