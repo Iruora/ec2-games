@@ -1,4 +1,4 @@
-body{
+body {
 	background-size:cover; 
 	background: #2C3E50;  /* fallback for old browsers */
 	background: -webkit-linear-gradient(to right, #4CA1AF, #2C3E50);  /* Chrome 10-25, Safari 5.1-6 */
@@ -15,7 +15,7 @@ body{
 
 .hide {
 
-display: none;
+	display: none;
 }
 .game-container {
 	background-color: black;
@@ -65,9 +65,9 @@ p {
 .zoom:hover {
     
     transform: scale(1.5); 
-
+}
 #penguin {
-		-webkit-animation: rotation 2s infinite linear;
+	-webkit-animation: rotation 2s infinite linear;
 }
 
 @-webkit-keyframes rotation {
