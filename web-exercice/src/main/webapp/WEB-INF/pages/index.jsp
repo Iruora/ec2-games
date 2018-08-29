@@ -7,7 +7,7 @@
 	<title>GeoMiroir</title>
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link href="${parenturl}/static/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen">
-	<link href="${parenturl}/static/css/style.css" rel="stylesheet" media="screen">
+	<link href="/static/css/style.css" rel="stylesheet" media="screen">
 	<link rel="shortcut icon" href="${parenturl}/static/TemplateData/favicon.ico">
 	<link rel="stylesheet" href="${parenturl}/static/TemplateData/style.css">
 	<script src="${parenturl}/static/TemplateData/UnityProgress.js"></script>
@@ -21,15 +21,16 @@
 </head>
 
 <body>
-	
+
 	<div class="webgl-content game-container">
+		<img src="/static/image/wallpaper.png" id="bg-pic">
 		<div id="gameContainer" style="width: 960px; height: 600px"></div>
 		<div class="footer">
 			<div class="webgl-logo"></div>
 			<div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
 			<div class="title">GeoMirror</div>
 			<ul class="nav navbar-nav">
-				<li >
+				<li>
 					<a href="/">Home</a>
 				</li>
 				<li class="active">
