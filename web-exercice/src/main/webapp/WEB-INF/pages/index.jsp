@@ -21,33 +21,41 @@
 </head>
 
 <body>
-	
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">Juokinga</a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li >
+					<a href="/">Home</a>
+				</li>
+				<li class="active">
+					<a href="/geomirror/">Geomiroir</a>
+				</li>
+				<li>
+					<a href="/exercice/">Calculus</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
 	<div class="webgl-content game-container">
 		<div id="gameContainer" style="width: 960px; height: 600px"></div>
 		<div class="footer">
 			<div class="webgl-logo"></div>
 			<div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
 			<div class="title">GeoMirror</div>
-			<nav class="navbar navbar-inverse">
-				<div class="container-fluid">
-					<div class="navbar-header">
-						<a class="navbar-brand" href="#">Juokinga</a>
-					</div>
-					<ul class="nav navbar-nav">
-						<li class="webgl-logo"></li>
-						<li class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></li>
-						<li >
-							<a href="/">Home</a>
-						</li>
-						<li class="active">
-							<a href="/geomirror/">Geomiroir</a>
-						</li>
-						<li>
-							<a href="/exercice/">Calculus</a>
-						</li>
-					</ul>
-				</div>
-			</nav>
+			<ul class="nav navbar-nav">
+				<li >
+					<a href="/">Home</a>
+				</li>
+				<li class="active">
+					<a href="/geomirror/">Geomiroir</a>
+				</li>
+				<li>
+					<a href="/exercice/">Calculus</a>
+				</li>
+			</ul>
 		</div>
 	</div>
 	<script type="text/javascript" src="${parenturl}/static/js/jquery.js"></script>
