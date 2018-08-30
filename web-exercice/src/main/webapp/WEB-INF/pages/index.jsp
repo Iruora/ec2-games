@@ -23,7 +23,11 @@
 <body>
 
 	<div class="webgl-content game-container">
-		<img src="/static/image/wallpaper.png" id="bg-pic">
+		<img src="/static/image/wallpaper.png" style = "background-size: cover;
+		width : 100vw;
+		height: 100vh;
+		z-index: -100;	
+		position: absolute;">
 		<div id="gameContainer" style="width: 960px; height: 600px"></div>
 		<div class="footer">
 			<div class="webgl-logo"></div>
