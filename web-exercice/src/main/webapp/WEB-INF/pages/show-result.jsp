@@ -34,7 +34,7 @@
 	</div>
 	<div class="container">
 		<div class="row well well-lg text-center">
-			<span class="glyphicon glyphicon-time"></span><h1 id="chrono" class="label label-info"> ${countDownStart}</h1>
+			<h1 id="chrono" class="btn btn-lg btn-info"> <span class="glyphicon glyphicon-time"></span> ${countDownStart}</h1>
 		</div>
 		<div id="calcul" class="row">
 
