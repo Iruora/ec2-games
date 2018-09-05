@@ -77,7 +77,7 @@
 							$("#badge-" + i).text(data);
 							if (scoreValue <= silver) {
 								$("#badge-" + i).addClass("silver-btn");
-							} else if (i >= gold) {
+							} else if (scoreValue >= gold) {
 								//$("#nb-btn-"+i).css("background-color", "#D4AF37");
 								$("#badge-" + i).addClass("gold-btn");
 							}
