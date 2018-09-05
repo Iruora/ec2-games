@@ -71,7 +71,7 @@
 					(data) => {
 						let gold = ${goldNumber};
 						let silver = ${silverNumber};
-						//console.log("***"+i+"***"+data+${operation});
+						console.log("***"+i+"***"+data);
 						if (gold != null && silver != null) {
 							$("#badge-" + i).text(data);
 							if (data <= silver) {
