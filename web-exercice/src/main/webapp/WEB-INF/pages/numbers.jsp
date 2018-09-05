@@ -47,16 +47,10 @@
 	<script type="text/javascript">
 		(function () {
 			console.log("enables");
-			let gold = $ {
-				goldNumber
-			};
-			let silver = $ {
-				silverNumber
-			};
+			let gold = ${goldNumber};
+			let silver = ${silverNumber};
 			//$("p#44.test").css("background-color", "yellow");
-			for (let i = 1; i <= $ {
-					maxNumberForGeneration
-				}; i++) {
+			for (let i = 1; i <= ${maxNumberForGeneration}; i++) {
 				let scoreBadge = $("#badge-" + i).text();
 				//---------------------------------------------
 				if (gold != null && silver != null) {
