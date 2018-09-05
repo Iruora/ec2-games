@@ -72,9 +72,10 @@
 						let gold = ${goldNumber};
 						let silver = ${silverNumber};
 						console.log("***"+i+"***"+data);
+						var scoreValue = data.split(" ")[2];
 						if (gold != null && silver != null) {
 							$("#badge-" + i).text(data);
-							if (data <= silver) {
+							if (scoreValue <= silver) {
 								$("#badge-" + i).addClass("silver-btn");
 							} else if (i >= gold) {
 								//$("#nb-btn-"+i).css("background-color", "#D4AF37");
