@@ -34,7 +34,7 @@
 		<div class="row">
 			<div class="col-md-offset-2">
 				<c:forEach var="i" begin="1" end="${maxNumberForGeneration}">
-					<a href="/exercice/${title}/${i}" class="btn btn-lg btn-info col-md-2" id="nb-btn-${i}">${i}
+					<a href="/exercice/${title}/${i}" class="btn btn-lg btn-light col-md-2" id="nb-btn-${i}">${i}
 						<span class="badge" id="badge-${i}"></span></a>
 				</c:forEach>
 			</div>
