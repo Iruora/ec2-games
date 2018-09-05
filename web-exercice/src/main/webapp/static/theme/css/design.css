@@ -23,6 +23,7 @@
 }
 
 .gold-btn {
+	color: #FFFFFF;
     background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #be9231 30%, rgb(184, 148, 64) 40%, transparent 80%),
                 radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #c29734 62.5%, #d8a733 100%);
 }

@@ -69,7 +69,7 @@
 				$.post(
 					"/exercice/${operation}/" + firstNumber + "/totscore", {},
 					(data) => {
-						//console.log("***"+i+"***"+data+${operation});
+						console.log("***"+i+"***"+data+${operation});
 						if (gold != null && silver != null) {
 							$("#badge-" + i).text(data);
 							if (data <= silver) {
