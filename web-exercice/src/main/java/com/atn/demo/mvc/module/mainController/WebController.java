@@ -74,7 +74,7 @@ public class WebController {
 			throws Exception {
 		ModelAndView model = new ModelAndView();
 		//--------adding objects
-		model.addObject("greet", "Hello ! choose operation");
+		model.addObject("greet", "Bonjour ! choisir un operateur");
 		//=======setting view name--------------
 		model.setViewName("exercice");
 		return model;
@@ -83,7 +83,6 @@ public class WebController {
 	/***********************************************
 	 * 
 	 * @param operation
-	 * @param firstNumber
 	 * @return
 	 * ============================Numbers Route ROUTE==================================
 	 */

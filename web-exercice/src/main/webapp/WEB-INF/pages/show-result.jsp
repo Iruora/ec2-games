@@ -21,9 +21,9 @@
 				class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
 			</a>
 			<div class="btn-group ">
-				<a href="/exercice" class="btn btn-lg btn-primary">Back to
+				<a href="/exercice" class="btn btn-lg btn-primary">Retour aux
 					exercices</a> <a href="/exercice/${operation}"
-					class="btn btn-lg btn-info">Back to numbers</a>
+					class="btn btn-lg btn-info">Retour aux nombres</a>
 			</div>
 			<button class="btn btn-success btn-lg" type="button">
 				Score <a><span class="badge" id="scoreBadge"> </span></a>
@@ -162,7 +162,7 @@
 			            		
 			            		//--------------------------------
 			                	$( ".demo-container" ).html( "<p>All new content. <em>You bet!</em></p>" );
-			                	$resultsString.html("<div class='alert alert-success alert-text' role='alert' id='success-alert' > well done ! </div> ");
+			                	$resultsString.html("<div class='alert alert-success alert-text' role='alert' id='success-alert' > Très bien ! </div> ");
 
 								//alert("/exercice/${operation}/${firstNumber}/score");
 			                	$.post(
@@ -185,7 +185,7 @@
 			            		//console.log("Oh snap!");
 			            		$next.hide();
 			            		$("#userInput").val("");
-			                	$resultsString.html("<div class='alert alert-danger alert-text' role='alert' id='failure-alert'>oops !</div>");
+			                	$resultsString.html("<div class='alert alert-danger alert-text' role='alert' id='failure-alert'>oops ! Réssayez encore une fois !</div>");
 			            	}
 						
 
