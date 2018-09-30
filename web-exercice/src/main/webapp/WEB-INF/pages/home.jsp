@@ -5,21 +5,44 @@
 		<link href="${parenturl}/static/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen">
 		<link href="${parenturl}/static/css/style.css" rel="stylesheet" media="screen">
 		
-		
+
+        <style>
+            .navbar-custom {
+                background-color:#229922;
+                color:#ffffff;
+                border-radius:0;
+            }
+
+            .navbar-custom .navbar-nav > li > a {
+                color:#fff;
+            }
+
+            .navbar-custom .navbar-nav > .active > a {
+                color: #ffffff;
+                background-color:transparent;
+            }
+
+            .navbar-custom .navbar-nav > li > a:hover,
+            .navbar-custom .navbar-nav > li > a:focus,
+            .navbar-custom .navbar-nav > .active > a:hover,
+            .navbar-custom .navbar-nav > .active > a:focus,
+            .navbar-custom .navbar-nav > .open >a {
+                text-decoration: none;
+                background-color: #33aa33;
+            }
+
+            .navbar-custom .navbar-brand {
+                color:#eeeeee;
+            }
+            .navbar-custom .navbar-toggle {
+                background-color:#eeeeee;
+            }
+            .navbar-custom .icon-bar {
+                background-color:#33aa33;
+            }
+        </style>
 	</head>
 	<body>
-		<nav class="navbar navbar-inverse">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<a class="navbar-brand" href="#">Juokinga</a>
-				</div>
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="/">Home</a></li>
-					<li><a href="/geomirror/">Geomiroir</a></li>
-					<li><a href="/exercice/">Calculus</a></li>
-				</ul>
-			</div>
-		</nav>
 
 		<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
 			<div class="container-fluid">
