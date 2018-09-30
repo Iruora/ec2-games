@@ -83,7 +83,7 @@
 			<button class="btn btn-success btn-lg" type="button">
 				Score <a><span class="badge" id="scoreBadge"> </span></a>
 			</button>
-
+			<h1> Time left : </h1><h1 id="chrono" class="btn btn-lg btn-info">${countDownStart}</h1>
 
 		</div>
 	</div>
