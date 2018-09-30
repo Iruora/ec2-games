@@ -44,7 +44,7 @@
 	</head>
 	<body>
 
-		<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+		<nav class="navbar navbar-default navbar-custom navbar-fixed-top row">
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
