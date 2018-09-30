@@ -88,8 +88,8 @@
       <file leaf-file-name="show-result.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/show-result.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="85" column="63" lean-forward="false" selection-start-line="85" selection-start-column="63" selection-end-line="85" selection-end-column="63" />
+            <state relative-caret-position="289">
+              <caret line="87" column="8" lean-forward="false" selection-start-line="87" selection-start-column="12" selection-end-line="90" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -602,7 +602,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1533542582006</updated>
-      <workItem from="1538342379748" duration="6226000" />
+      <workItem from="1538342379748" duration="6577000" />
     </task>
     <servers />
   </component>
@@ -618,7 +618,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6226000" />
+    <option name="totallyTimeSpent" value="6577000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
@@ -777,8 +777,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/show-result.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="85" column="63" lean-forward="false" selection-start-line="85" selection-start-column="63" selection-end-line="85" selection-end-column="63" />
+        <state relative-caret-position="289">
+          <caret line="87" column="8" lean-forward="false" selection-start-line="87" selection-start-column="12" selection-end-line="90" selection-end-column="18" />
           <folding />
         </state>
       </provider>

@@ -85,10 +85,10 @@
 			<h2 class="col-md-2"> Time left : </h2>
 			<h1 id="chrono" class="btn btn-lg btn-info col-md-1">${countDownStart}</h1>
 		</div>
-		<div class="row  alert alert-warning">
-			<h2 class="col-md-offset-4 col-md-4"> Time left : </h2>
-			<h1 id="chrono" class="btn btn-lg btn-info col-md-2">${countDownStart}</h1>
-		</div>
+		<%--<div class="row  alert alert-warning">--%>
+			<%--<h2 class="col-md-offset-4 col-md-4"> Time left : </h2>--%>
+			<%--<h1 id="chrono" class="btn btn-lg btn-info col-md-2">${countDownStart}</h1>--%>
+		<%--</div>--%>
 	</div>
 	<div class="container">
 		<%--<div class="row well well-lg text-center">--%>
