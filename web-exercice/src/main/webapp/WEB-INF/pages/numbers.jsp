@@ -12,10 +12,64 @@
 	<link href="${parenturl}/static/css/design.css" rel="stylesheet" media="screen">
 
 	<title>${title}</title>
+	<style>
+		.navbar-custom {
+			background-color:#229922;
+			color:#ffffff;
+			border-radius:0;
+		}
+
+		.navbar-custom .navbar-nav > li > a {
+			color:#fff;
+		}
+
+		.navbar-custom .navbar-nav > .active > a {
+			color: #ffffff;
+			background-color:transparent;
+		}
+
+		.navbar-custom .navbar-nav > li > a:hover,
+		.navbar-custom .navbar-nav > li > a:focus,
+		.navbar-custom .navbar-nav > .active > a:hover,
+		.navbar-custom .navbar-nav > .active > a:focus,
+		.navbar-custom .navbar-nav > .open >a {
+			text-decoration: none;
+			background-color: #33aa33;
+		}
+
+		.navbar-custom .navbar-brand {
+			color:#eeeeee;
+		}
+		.navbar-custom .navbar-toggle {
+			background-color:#eeeeee;
+		}
+		.navbar-custom .icon-bar {
+			background-color:#33aa33;
+		}
+	</style>
 </head>
 
 <body>
-
+<nav class="navbar navbar-default navbar-custom row">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">Juokinga</a>
+		</div>
+		<div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="/">Home</a></li>
+				<li><a href="/geomirror/">Geomiroir</a></li>
+				<li><a href="/exercice/">Calculus</a></li>
+			</ul>
+		</div><!-- /.navbar-collapse -->
+	</div>
+</nav>
 	<div class="row well well-lg">
 
 		<div class="btn-group col-md-3">
