@@ -72,19 +72,18 @@
 </nav>
 	<div class="container">
 		<div class="row well well-lg">
-			<a href="" class="btn btn-warning btn-lg"> <span
-				class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+			<a href="" class="btn btn-warning btn-lg col-md-1">
+				<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
 			</a>
-			<div class="btn-group">
-				<a href="/exercice" class="btn btn-lg btn-primary ">Retour aux
-					exercices</a>
-				<a href="/exercice/${operation}"
-					class="btn btn-lg btn-info">Retour aux nombres</a>
+			<div class="btn-group col-md-6">
+				<a href="/exercice" class="btn btn-lg btn-primary ">Retour aux exercices</a>
+				<a href="/exercice/${operation}" class="btn btn-lg btn-info">Retour aux nombres</a>
 			</div>
-			<button class="btn btn-success btn-lg " type="button">
+			<button class="btn btn-success btn-lg col-md-2" type="button">
 				Score <a><span class="badge" id="scoreBadge"> </span></a>
 			</button>
-
+			<h2 class="col-md-2"> Time left : </h2>
+			<h1 id="chrono" class="btn btn-lg btn-info col-md-1">${countDownStart}</h1>
 		</div>
 		<div class="row  alert alert-warning">
 			<h2 class="col-md-offset-4 col-md-4"> Time left : </h2>
