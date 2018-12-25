@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
@@ -10,16 +11,12 @@
 	<name>Multi Chapter Simple Parent Project</name>
 
 	<modules>
-		<module>chosa-core</module>
-		<module>chosa-front-admin</module>
-		<module>chosa-family</module>
-		<module>chosa-trainingCenter</module>
-		<module>chosa-teacher</module>
+		<module>web-exercice</module>
 	</modules>
 	<properties>
 		<jdk.version>1.7</jdk.version>
 		<junit.version>4.12</junit.version>
-		<commons.version>3.13-SNAPSHOT</commons.version>
+		<commons.version>3.29</commons.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -32,6 +29,11 @@
 	<build>
 		<pluginManagement>
 			<plugins>
+				<plugin>
+					<groupId>org.apache.tomcat.maven</groupId>
+					<artifactId>tomcat7-maven-plugin</artifactId>
+					<version>2.0</version>
+				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
@@ -102,7 +104,7 @@
 		<profile>
 			<id>DEV</id>
 			<activation>
-				<activeByDefault>true</activeByDefault>
+				<activeByDefault>false</activeByDefault>
 			</activation>
 			<properties>
 				<mail.user>nepasrepondre@allence-tunisie.com</mail.user>
@@ -132,6 +134,7 @@
 				<hibernate.dialect>org.hibernate.dialect.MySQL5Dialect</hibernate.dialect>
 			</properties>
 		</profile>
+
 		<profile>
 			<id>PREPROD</id>
 			<properties>

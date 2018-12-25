@@ -1,0 +1,113 @@
+body {
+	background-size:cover; 
+	background: #2C3E50;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #4CA1AF, #2C3E50);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #4CA1AF, #2C3E50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#bg-pic {
+	background-size: cover;
+	width : 100vw;
+	height: 100vh;
+	z-index: -100;	
+	position: absolute;
+}
+
+.hide {
+
+	display: none;
+}
+.game-container {
+	background-color: black;
+}
+
+p {
+	color: white;
+	font-size: x-large;
+}
+
+#linkToGame {
+	color: inherit;
+	font-size: 20rem;
+	font-weight: bold;
+}
+
+.error {
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	color: #a94442;
+	background-color: #f2dede;
+	border-color: #ebccd1;
+}
+
+.msg {
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	color: #31708f;
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+}
+
+#login-box {
+	width: 350px;
+	padding: 20px;
+	margin: 450px auto;
+	background: #fff;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border: 1px solid #000;
+}
+
+.zoom:hover {
+    
+    transform: scale(1.5); 
+}
+#penguin {
+	-webkit-animation: rotation 2s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+		from {
+				-webkit-transform: rotate(-10deg);
+		}
+		to {
+				-webkit-transform: rotate(10deg);
+		}
+}
+.navbar-custom {
+	background-color:#229922;
+	color:#ffffff;
+	border-radius:0;
+}
+
+.navbar-custom .navbar-nav > li > a {
+	color:#fff;
+}
+
+.navbar-custom .navbar-nav > .active > a {
+	color: #ffffff;
+	background-color:transparent;
+}
+
+.navbar-custom .navbar-nav > li > a:hover,
+.navbar-custom .navbar-nav > li > a:focus,
+.navbar-custom .navbar-nav > .active > a:hover,
+.navbar-custom .navbar-nav > .active > a:focus,
+.navbar-custom .navbar-nav > .open >a {
+	text-decoration: none;
+	background-color: #33aa33;
+}
+
+.navbar-custom .navbar-brand {
+	color:#eeeeee;
+}
+.navbar-custom .navbar-toggle {
+	background-color:#eeeeee;
+}
+.navbar-custom .icon-bar {
+	background-color:#33aa33;
+}

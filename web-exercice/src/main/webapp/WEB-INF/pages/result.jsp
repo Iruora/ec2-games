@@ -1,0 +1,2 @@
+${operation}#${firstNumber}#${operationString}#${result}#
+		
