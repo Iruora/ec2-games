@@ -69,19 +69,6 @@
 			<url>https://artifacts.alfresco.com/nexus/content/repositories/public/</url>
 		</pluginRepository>
 	</pluginRepositories>
-	<repositories>
-		<repository>
-			<id>Archiva.repo</id>
-			<name>Archiva Internal Repository</name>
-			<url>http://archiva.portago.eu/repository/portago/</url>
-
-		</repository>
-		<repository>
-			<id>alfresco</id>
-			<name>alfresco</name>
-			<url>https://artifacts.alfresco.com/nexus/content/repositories/public/</url>
-		</repository>
-	</repositories>
 	<profiles>
 		<profile>
 			<id>DEV</id>
